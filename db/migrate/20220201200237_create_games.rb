@@ -4,7 +4,7 @@ class CreateGames < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :description
       t.string :image_url
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.string :condition
 
       t.timestamps
