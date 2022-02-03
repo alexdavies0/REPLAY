@@ -3,3 +3,4 @@
 <p><%= @game.image_url %></p>
 <p><%= @game.condition %></p>
 <p>This game belongs to <%= @game.user.first_name %> <%= @game.user.last_name %></p>
+<%= link_to "Back to list", games_path %>
