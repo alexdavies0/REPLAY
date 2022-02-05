@@ -1,12 +1,12 @@
 <div class="container">
 	<%= link_to "Back to list", games_path %>
 
-	<div class="card" style="width: 54rem;">
-		<h3 class="card-title"><%= @game.title %></h3>
-		<p class="card-text">Condition: <%= @game.condition %> | Owner: <%= @game.user.first_name %> <%= @game.user.last_name %></p>
+	<div>
+		<h3><%= @game.title %></h3>
+		<p>Condition: <%= @game.condition %> | Owner: <%= @game.user.first_name %> <%= @game.user.last_name %></p>
 	</div>
 	
-	<div class="d-flex">
+	<div class="d-flex justify-content-between">
 		<div>
 			<!-- <img src=<% "#{@game.image_url}" %> alt="Game image"> -->
 			<div class="image" style="background-image: url(https://loremflickr.com/300/300)">
@@ -14,8 +14,22 @@
 			<!-- <p><%= @game.image_url %></p> -->
 		</div>
 
-		<div>
-			<p><%= @game.description %></p>
+		<div class="card">
+			<div class="card-body">
+				<h5 class="Booking">Booking</h5>
+				<p class="card-text">Book now to ensure you get to play.</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item justify-content-between d-flex"><label class="custom-class" for="start">Start date:</label> <input type="date" id="start" name="game-start" value="2022-02-01" min="2022-02-05" max="2022-12-31"></li>
+				<li class="list-group-item justify-content-between d-flex"><label class="custom-class" for="end">Return date:</label> <input type="date" id="end" name="game-end" value="2022-02-01" min="2022-02-05" max="2022-12-31"></li>
+			</ul>
+			<div class="card-body">
+				<button type="button" class="btn btn-outline-primary">Book</button>
+			</div>
 		</div>
+	</div>
+
+	<div>
+		<p class="game-description"><%= @game.description %></p>
 	</div>
 </div>
