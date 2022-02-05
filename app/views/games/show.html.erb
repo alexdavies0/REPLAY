@@ -1,6 +1,8 @@
-<div class="container">
-	<%= link_to "Back to list", games_path %>
-
+<br>
+<div class="container-game">
+	<div style="padding-top: 30px">
+		<%= link_to "< Back to list", games_path %>
+	</div>
 	<div>
 		<h3><%= @game.title %></h3>
 		<p>Condition: <%= @game.condition %> | Owner: <%= @game.user.first_name %> <%= @game.user.last_name %></p>
@@ -8,10 +10,13 @@
 	
 	<div class="d-flex justify-content-between">
 		<div>
-			<!-- <img src=<% "#{@game.image_url}" %> alt="Game image"> -->
-			<div class="image" style="background-image: url(https://loremflickr.com/300/300)">
-			</div>
-			<!-- <p><%= @game.image_url %></p> -->
+			<!-- <div class="image-game" style="background-image: url(<%= @game.image_url %>)">
+			</div> -->
+			<!-- <div class="image-game" style="background-image: url(https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__itemrep/img/IzYEUm_gWFuRFOL8gQYqGm5gU6A=/fit-in/246x300/filters:strip_icc()/pic2419375.jpg)">
+			</div> -->
+			<img class="image-game" alt="Qries" src="https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__itemrep/img/IzYEUm_gWFuRFOL8gQYqGm5gU6A=/fit-in/246x300/filters:strip_icc()/pic2419375.jpg">
+
+			<!-- <img src="url(<%= @game.image_url %>)" alt="game-image"> -->
 		</div>
 
 		<div class="card">
@@ -29,7 +34,7 @@
 		</div>
 	</div>
 
-	<div>
+	<div style="padding-bottom: 30px">
 		<p class="game-description"><%= @game.description %></p>
 	</div>
 </div>
