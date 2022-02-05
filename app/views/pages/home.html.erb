@@ -5,3 +5,20 @@
     <%= link_to "Browse Games", games_path, class:"btn btn-primary"%>
   </div>
 </div>
+
+<div class="container-fluid">
+<h2 style="padding-left:10px; padding-top:30px">Featured</h2>
+  <div class="row">
+    <% @games.first(3).each do |game| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-product">
+          <img src="<%= game.image_url %>">
+          <div class="card-product-infos">
+            <h4><%= link_to game.title, game_path(game) %></h4>
+            <p><%= game.description %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
