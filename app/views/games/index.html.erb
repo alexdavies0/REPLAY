@@ -1,5 +1,16 @@
 <h1>All Games</h1>
-<% @games.each do |game| %>
-    <li><%= link_to game.title, game_path(game) %></li>
-  <% end %>
-<%# <%= link_to <p>Back to list</p>, games_path %> %>
+<div class="container-fluid">
+  <div class="row">
+    <% @games.each do |game| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-product">
+          <img src="<%= game.image_url %>">
+          <div class="card-product-infos">
+            <h4><%= link_to game.title, game_path(game) %></h4>
+            <p><%= game.description %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
