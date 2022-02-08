@@ -54,7 +54,7 @@ Game.create(
     title: "7 Wonders",
     description: "Draft cards to develop your ancient civilization and build its Wonder of the World.",
     image_url: "https://cf.geekdo-images.com/RvFVTEpnbb4NM7k0IF8V7A__itemrep/img/F__zhk-OFDgFcMBysW2JlcYJADw=/fit-in/246x300/filters:strip_icc()/pic860217.jpg",
-    user_id: rand(2..18),
+    user_id: rand(41),
     condition: ['good', 'fair', 'poor'].sample
   )
 
@@ -86,7 +86,7 @@ Game.create(
     title: "Codenames",
     description: "Give your team clever one-word clues to help them spot their agents in the field.",
     image_url: "https://cf.geekdo-images.com/F_KDEu0GjdClml8N7c8Imw__itemrep/img/e8zw8YQvQB8q8zfWkHQ48Ls920g=/fit-in/246x300/filters:strip_icc()/pic2582929.jpg",
-    user_id: rand(2..18),
+    user_id: rand(41),
     condition: ['good', 'fair', 'poor'].sample
   )
 
@@ -126,7 +126,7 @@ Game.create(
     title: "Splendour",
     description: "Renaissance merchants race to grab gems, acquire property, and please nobility.",
     image_url: "https://cf.geekdo-images.com/rwOMxx4q5yuElIvo-1-OFw__itemrep/img/NaQx3XWoNAOMDGl4AXf4nxlhHo0=/fit-in/246x300/filters:strip_icc()/pic1904079.jpg",
-    user_id: rand(2..18),
+    user_id: rand(41),
     condition: ['good', 'fair', 'poor'].sample
   )
 
