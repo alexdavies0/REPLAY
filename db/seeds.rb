@@ -182,7 +182,7 @@ Game.create(
     title: "Wingspan",
     description: "Attract a beautiful and diverse collection of birds to your wildlife reserve.",
     image_url: "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__itemrep/img/DR7181wU4sHT6gn6Q1XccpPxNHg=/fit-in/246x300/filters:strip_icc()/pic4458123.jpg",
-    user_id: rand(2..18),
+    user_id: '21',
     condition: ['good', 'fair', 'poor'].sample
   )
 
@@ -190,6 +190,6 @@ Game.create(
     title: "Carcassonne",
     description: "Shape the medieval landscape of France, claiming cities, monasteries and farms.",
     image_url: "https://cf.geekdo-images.com/okM0dq_bEXnbyQTOvHfwRA__itemrep/img/_GLRhUoVx6Zp4kTE0rv_gi9cyOQ=/fit-in/246x300/filters:strip_icc()/pic6544250.png",
-    user_id: rand(2..18),
+    user_id: '21',
     condition: ['good', 'fair', 'poor'].sample
   )
