@@ -1,11 +1,10 @@
-<h1>You are on the profile page</h1>
-
-<%= @user.first_name %>
-<%= @user.id %>
 <div class="container-fluid">
-<h2 style="padding-left:10px; padding-top:30px">My Games</h2>
+  <h1>Hi, <%= @user.first_name %></h1>
+  <h3>Take a look at your games and bookings</h3>
+
+  <h2 style="padding-left:10px; padding-top:30px">My Games</h2>
   <div class="row">
-    <% @games.first(3).each do |game| %>
+    <% @games.each do |game| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card-product">
           <img src="<%= game.image_url %>">
@@ -17,6 +16,12 @@
       </div>
     <% end %>
   </div>
-</div>
 
-<%= link_to "Add a game to your collection", new_game_path %>
+
+  <div>
+    <%= link_to "Add a game to your collection", new_game_path %>
+  </div>
+  <div>
+    <%= link_to "Find a game to borrow", games_path %>
+  </div>
+</div>
