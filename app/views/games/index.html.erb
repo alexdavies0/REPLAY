@@ -7,7 +7,8 @@
           <img src="<%= game.image_url %>">
           <div class="card-product-infos">
             <h4><%= link_to game.title, game_path(game) %></h4>
-            <p><%= game.description %>
+            <p><em>Condition: <%= game.condition%>, Owner: <%= game.user.first_name %> <%= game.user.last_name %></em></p>
+            <p><%= game.description %></p>
           </div>
         </div>
       </div>
