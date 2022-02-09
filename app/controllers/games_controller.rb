@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
   def index
     if params[:query].present?
-      @games = Game.where(title: params[:query])
+      @games = Game.where("title ILIKE ?", "%#{params[:query]}%")
     else
       @games = Game.all
     end
