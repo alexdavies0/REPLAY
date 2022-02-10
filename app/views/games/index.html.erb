@@ -1,5 +1,18 @@
 
+
 <div class="container-fluid">
+
+    <div class="search-bar">
+      <%= form_tag games_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a game"
+          %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
 <h1>All Games</h1>
   <div class="row">
     <% @games.each do |game| %>
@@ -8,7 +21,8 @@
           <img src="<%= game.image_url %>">
           <div class="card-product-infos">
             <h4><%= link_to game.title, game_path(game) %></h4>
-            <p><%= game.description %>
+            <p><em>Condition: <%= game.condition%>, Owner: <%= game.user.first_name %> <%= game.user.last_name %></em></p>
+            <p><%= game.description %></p>
           </div>
         </div>
       </div>
