@@ -3,7 +3,10 @@ class BookingsController < ApplicationController
 
   # Need to make sure this displays bookings for the current user only
   def index
-    @bookings = Booking.all
+    # @bookings = @booking.user
+    @booking.user = current_user
+    @games = Game.where(user: current_user)
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
