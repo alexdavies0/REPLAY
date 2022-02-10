@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_game, except: [:index, :show]
-
+  before_action :set_booking, except: [:index]
+  before_action :set_user
   # Need to make sure this displays bookings for the current user only
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
+    @mybookings = Booking.all
   end
 
   def show
@@ -26,10 +27,17 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    # @booking = Booking.find(booking_params)
+    @booking.delete
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to bookings_path
+  end
+
   private
 
-  def set_game
-    @game = Game.find(params[:game_id])
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
   # def booking_params
@@ -37,6 +45,12 @@ class BookingsController < ApplicationController
   # end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :game_id, :user_id)
+  end
+
+  def set_user
+    if user_signed_in?
+      @user = current_user
+    end
   end
 end

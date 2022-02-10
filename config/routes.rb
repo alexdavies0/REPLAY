@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :games, only: [ :index, :show, :new, :create ] do
     resources :bookings, only: [ :new, :create ]
   end
-  resources :bookings, only: [ :index, :show, :edit, :update ]
+  resources :bookings, only: [ :index, :show, :edit, :update, :destroy ]
   resources :pages, only: [ :index ]
   get 'profile', to: 'pages#profile'
 end
