@@ -1,1 +1,35 @@
-<h1> Hello </h1>
+ <h2 style="padding-left:10px; padding-top:30px">Bookings you have made</h2>
+  <div class="row">
+    <% @bookings.each do |b| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-product">
+          <img src="<%= b.game.image_url %>">
+          <div class="card-product-infos">
+            <h4><%=b.game.title%></h4>
+            <p>FROM: <%= b.start_date %>
+            <p>UNTIL: <%= b.end_date %>
+            <%= link_to booking_path(b),method: :delete,
+            data: {confirm: "are you sure?"} do %>
+            <p class="text-success"><i class="fas fa-trash"></i></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<h1>Bookings of my games</h1>
+      <% @bookings.each do |b| %>
+      <% if b.game.user.id == current_user.id %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-product">
+          <img src="<%= b.game.image_url %>">
+          <div class="card-product-infos">
+            <h4><%=b.game.title%></h4>
+            <p>FROM: <%= b.start_date %>
+            <p>UNTIL: <%= b.end_date %>
+          </div>
+        </div>
+      </div>
+      <% end%>
+    <% end %>
