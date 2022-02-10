@@ -2,7 +2,11 @@ class GamesController < ApplicationController
   before_action :set_user, except: [:index, :show]
 
   def index
-    @games = Game.all
+    if params[:query].present?
+      @games = Game.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @games = Game.all
+    end
   end
 
   def show
