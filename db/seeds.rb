@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do
-  User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    address: Faker::Address.street_address,
-    email: Faker::Internet.email,
-    password: '123456789'
-  )
-end
+# 20.times do
+#   User.create(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     address: Faker::Address.street_address,
+#     email: Faker::Internet.email,
+#     password: '123456789'
+#   )
+# end
 
 # 100.times do
 #   Game.create(
@@ -25,6 +25,8 @@ end
 #     condition: ['good', 'fair', 'poor'].sample
 #   )
 # end
+
+Game.delete_all
 
 Game.create(
     title: "Pandemic",
@@ -54,7 +56,7 @@ Game.create(
     title: "7 Wonders",
     description: "Draft cards to develop your ancient civilization and build its Wonder of the World.",
     image_url: "https://cf.geekdo-images.com/RvFVTEpnbb4NM7k0IF8V7A__itemrep/img/F__zhk-OFDgFcMBysW2JlcYJADw=/fit-in/246x300/filters:strip_icc()/pic860217.jpg",
-    user_id: rand(2..18),
+    user_id: rand(41),
     condition: ['good', 'fair', 'poor'].sample
   )
 
@@ -86,7 +88,7 @@ Game.create(
     title: "Codenames",
     description: "Give your team clever one-word clues to help them spot their agents in the field.",
     image_url: "https://cf.geekdo-images.com/F_KDEu0GjdClml8N7c8Imw__itemrep/img/e8zw8YQvQB8q8zfWkHQ48Ls920g=/fit-in/246x300/filters:strip_icc()/pic2582929.jpg",
-    user_id: rand(2..18),
+    user_id: rand(41),
     condition: ['good', 'fair', 'poor'].sample
   )
 
@@ -126,7 +128,7 @@ Game.create(
     title: "Splendour",
     description: "Renaissance merchants race to grab gems, acquire property, and please nobility.",
     image_url: "https://cf.geekdo-images.com/rwOMxx4q5yuElIvo-1-OFw__itemrep/img/NaQx3XWoNAOMDGl4AXf4nxlhHo0=/fit-in/246x300/filters:strip_icc()/pic1904079.jpg",
-    user_id: rand(2..18),
+    user_id: rand(41),
     condition: ['good', 'fair', 'poor'].sample
   )
 
@@ -182,7 +184,7 @@ Game.create(
     title: "Wingspan",
     description: "Attract a beautiful and diverse collection of birds to your wildlife reserve.",
     image_url: "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__itemrep/img/DR7181wU4sHT6gn6Q1XccpPxNHg=/fit-in/246x300/filters:strip_icc()/pic4458123.jpg",
-    user_id: rand(2..18),
+    user_id: '21',
     condition: ['good', 'fair', 'poor'].sample
   )
 
@@ -190,6 +192,6 @@ Game.create(
     title: "Carcassonne",
     description: "Shape the medieval landscape of France, claiming cities, monasteries and farms.",
     image_url: "https://cf.geekdo-images.com/okM0dq_bEXnbyQTOvHfwRA__itemrep/img/_GLRhUoVx6Zp4kTE0rv_gi9cyOQ=/fit-in/246x300/filters:strip_icc()/pic6544250.png",
-    user_id: rand(2..18),
+    user_id: '21',
     condition: ['good', 'fair', 'poor'].sample
   )

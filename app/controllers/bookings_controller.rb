@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_game, except: [:index, :show]
 
+  # Need to make sure this displays bookings for the current user only
   def index
     @bookings = Booking.all
   end
@@ -16,8 +17,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.game = @game
+    @booking.user = current_user
     @booking.save
-    # redirect_to game_path(@game)
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   private

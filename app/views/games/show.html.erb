@@ -7,7 +7,7 @@
 		<h3><%= @game.title %></h3>
 		<p>Condition: <%= @game.condition %> | Owner: <%= @game.user.first_name %> <%= @game.user.last_name %></p>
 	</div>
-	
+
 	<div class="d-flex justify-content-between">
 		<div>
 			<div class="image-game" style="background-image: url(<%= @game.image_url %>)">
@@ -18,7 +18,7 @@
 			<!-- <img src="url(<%= @game.image_url %>)" alt="game-image"> -->
 		</div>
 
-		<div class="card">
+		<%# <div class="card">
 			<div class="card-body">
 				<h5 class="Booking">Booking</h5>
 				<p class="card-text">Book now to ensure you get to play.</p>
@@ -31,7 +31,16 @@
 				<button type="button" class="btn btn-outline-primary">Book</button>
 			</div>
 		</div>
-	</div>
+	</div> %>
+<div>
+  <%= simple_form_for [@game, @booking] do |f| %>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+  <%= f.submit %>
+  <% end %>
+</div>
 
 	<div style="padding-bottom: 30px">
 		<p class="game-description"><%= @game.description %></p>

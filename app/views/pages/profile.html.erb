@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h1>Hi, <%= @user.first_name %></h1>
+  <h3>Take a look at your games and bookings</h3>
+
+  <h2 style="padding-left:10px; padding-top:30px">My Games</h2>
+  <div class="row">
+    <% @games.each do |game| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-product">
+          <img src="<%= game.image_url %>">
+          <div class="card-product-infos">
+            <h4><%= link_to game.title, game_path(game) %></h4>
+            <p><%= game.description %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div>
+    <%= link_to "Add a game to your collection", new_game_path %>
+  </div>
+  <div>
+    <%= link_to "Find a game to borrow", games_path %>
+  </div>
+</div>

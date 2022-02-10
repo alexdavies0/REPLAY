@@ -1,8 +1,9 @@
 class Booking < ApplicationRecord
-  belongs_to :user, :game
-  validates :start_date, :end_date, presence: true, availability: true
-  validate :end_date_after_start_date
-  validates :status, inclusion: { in: %w(Declined Pending Approved)}
+  belongs_to :user
+  belongs_to :game
+  # validates :start_date, :end_date, presence: true, availability: true
+  # validate :end_date_after_start_date
+  # validates :status, inclusion: { in: %w(Declined Pending Approved)}
 
   private
 
