@@ -22,6 +22,11 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user = @user
     @game.save
+    if @game.save!
+      redirect_to profile_path(@user)
+    else
+      render :new
+    end
   end
 
 private
