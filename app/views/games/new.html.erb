@@ -1,7 +1,11 @@
-<%= simple_form_for [ @game ] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :image_url %>
-  <%= f.input :condition, :collection => %w[good fair poor] %>
-  <%= f.submit "Add game", class: "btn btn-primary" %>
-<% end %>
+<div class="container" style="padding-top: 30px; width:70%">
+  <h3 class="d-flex justify-content-center">&#127918 Let's add a new game to the community! &#127918;</h3>
+
+  <%= simple_form_for [ @game ] do |g| %>
+    <%= g.input :title %>
+    <%= g.input :description %>
+    <%= g.input :image_url %>
+    <%= g.input :condition, :collection => %w[good fair poor] %>
+    <%= g.submit "Add game", class: "btn btn-primary" %>
+  <% end %>
+</div>
