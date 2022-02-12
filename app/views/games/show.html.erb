@@ -1,48 +1,31 @@
 <br>
-<div class="container-game">
+<div class="container-game" style="width:1200px; margin:0 auto; padding: bottom 80px;">
 	<div style="padding-top: 30px">
-		<%= link_to "< Back to list", games_path %>
 	</div>
-	<div>
-		<h3><%= @game.title %></h3>
-		<p>Condition: <%= @game.condition %> | Owner: <%= @game.user.first_name %> <%= @game.user.last_name %></p>
-	</div>
-
 	<div class="d-flex justify-content-between">
-		<div>
-			<div class="image-game" style="background-image: url(<%= @game.image_url %>)">
-			</div>
-			<!-- <div class="image-game" style="background-image: url(https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__itemrep/img/IzYEUm_gWFuRFOL8gQYqGm5gU6A=/fit-in/246x300/filters:strip_icc()/pic2419375.jpg)">
-			</div> -->
-
-			<!-- <img src="url(<%= @game.image_url %>)" alt="game-image"> -->
+		<div class="game-image" style="min-height: 400px">
+      <img src="<%= @game.image_url %>">
 		</div>
+    <div class="game-text" style="text-align:right">
+      <h3><%= @game.title %></h3>
+		<p>Condition: <%= @game.condition %> | Owner: <%= @game.user.first_name %> <%= @game.user.last_name %></p>
+    <p><%= @game.description %></p>
+      <div class="add-game-form">
+        <%= simple_form_for [@game, @booking] do |f| %>
+        <%= f.label :start_date %>
+        <%= f.date_field :start_date %>
+        <br>
+        <%= f.label :end_date %>
+        <%= f.date_field :end_date %>
+        <br>
+        <%= f.submit %>
+        <% end %>
+        <br>
+        <%= link_to "View all games", games_path %>
+      </div>
+    </div>
+	</div>
 
-		<%# <div class="card">
-			<div class="card-body">
-				<h5 class="Booking">Booking</h5>
-				<p class="card-text">Book now to ensure you get to play.</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item justify-content-between d-flex"><label class="custom-class" for="start">Start date:</label> <input type="date" id="start" name="game-start" value="2022-02-01" min="2022-02-05" max="2022-12-31"></li>
-				<li class="list-group-item justify-content-between d-flex"><label class="custom-class" for="end">Return date:</label> <input type="date" id="end" name="game-end" value="2022-02-01" min="2022-02-05" max="2022-12-31"></li>
-			</ul>
-			<div class="card-body">
-				<button type="button" class="btn btn-outline-primary">Book</button>
-			</div>
-		</div>
-	</div> %>
-<div>
-  <%= simple_form_for [@game, @booking] do |f| %>
-  <%= f.label :start_date %>
-  <%= f.date_field :start_date %>
-  <%= f.label :end_date %>
-  <%= f.date_field :end_date %>
-  <%= f.submit %>
-  <% end %>
 </div>
 
 	<div style="padding-bottom: 30px">
-		<p class="game-description"><%= @game.description %></p>
-	</div>
-</div>
