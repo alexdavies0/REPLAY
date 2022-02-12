@@ -35,3 +35,23 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.search-bar {
+  border-radius: 25px;
+  box-shadow: 2px;
+}
+
+.search-btn {
+  background-color: #0168D9;
+  border-radius: 16px;
+  height: 38px;
+  width: 100px;
+  color: white;
+  border-style: none;
+}
